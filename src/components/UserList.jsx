@@ -4,34 +4,43 @@ const UserList = ({listOfUser}) => {
 
     return (
         <div>
-            <ul className="list-group">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope='col'>Street</th>
+                        <th scope='col'>Suite</th>
+                        <th scope='col'>City</th>
+                        <th scope='col'>Zipcode</th>
+                        <th scope='col'>Phone</th>
+                        <th scope='col'>Website</th>
+                        <th scope='col'>Company's name</th>
+                        <th scope='col'>CatchPrase</th>
+                        <th scope='col'>BS</th>
+                    </tr>
+                </thead>
                 {listOfUser.map((user) => 
-                    <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <span><b>Name</b><br /> {user.name} </span>
-                        <br />
-                        <span><b>Username</b><br /> {user.username} </span>
-                        <br />
-                        <span><b>Email</b><br /> {user.email} </span>
-                        <br />
-                        <span><b>street</b><br /> {user.address.street} </span>
-                        <br />
-                        <span><b>suite</b><br /> {user.address.suite} </span>
-                        <br />
-                        <span><b>city</b><br /> {user.address.city} </span>
-                        <br />
-                        <span><b>zipcode</b><br /> {user.address.zipcode} </span>
-                        <br />
-                        <span><b>Phone</b><br /> {user.phone} </span>
-                        <br />
-                        <span><b>Website</b><br /> {user.website} </span>
-                        <br />
-                        <span><b>Company name</b><br /> {user.company.name} </span>
-                        <br />
-                        <span><b>catchPhrase</b><br /> {user.company.catchPhrase} </span>
-                        <br />
-                        <span><b>bs</b><br /> {user.company.bs} </span>
-                    </li>)}
-            </ul>
+                    <tbody>
+                        <tr>
+                        <th scope="row">{user.id}</th>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.username}</td>
+                            <td>{user.address.street}</td>
+                            <td>{user.address.suite}</td>
+                            <td>{user.address.city}</td>
+                            <td>{user.address.zipcode}</td>
+                            <td>{user.phone}</td>
+                            <td>{user.website}</td>
+                            <td>{user.company.name}</td>
+                            <td>{user.company.catchPhrase}</td>
+                            <td>{user.company.bs}</td>
+                        </tr>
+                    </tbody>)}
+            </table>
         </div>
     )
 }
